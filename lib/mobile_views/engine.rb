@@ -1,4 +1,10 @@
 module MobileViews
+  mattr_accessor :mobile_subdomain
+  @@mobile_subdomain = 'm'
+  mattr_accessor :default_subdomain
+  @@default_subdomain = 'www'
+  mattr_accessor :mobile_mode_session_var
+  @@mobile_mode_session_var = :mobile
 
   class Engine < Rails::Engine
 
@@ -12,7 +18,6 @@ module MobileViews
         extend MobileViewsController::ClassMethods
       end
     end
-
   end
 
 end
